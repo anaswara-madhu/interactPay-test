@@ -1,0 +1,6 @@
+.listDetails li:hover{
+  border-left:2px solid #007bff;
+}
+.listDetails .activeList{
+  background-color: lightsteelblue;
+}

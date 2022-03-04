@@ -1,0 +1,160 @@
+.Interactpay {
+  background-color: #032d60;
+  color: #fff;
+}
+.PaymentPageHeaders {
+  font-size: initial;
+}
+.font-weight-bold {
+  font-weight: 700!important;
+}
+/* .listDetails li:hover{
+  border-left:2px solid #007bff;
+}
+.listDetails .activeList{
+  background-color: lightsteelblue;
+} */
+/* Popup style */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.dropdownMenu {
+  position: fixed;
+  width: 8%;
+  margin: 0px auto;
+  background: #fff;
+  border-radius: 4px;
+  padding: 14px;
+  border: 1px solid #999;
+}
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+.Interactheader{
+  font-size: smaller;
+}
+.deletePopUp{
+    width: 35%;
+    margin: 0 auto;
+    margin-top: calc(100vh - 85vh - 20px);
+    padding: 19px;
+    border: 1px solid #999;
+}
+.segmentsList.selected {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+/* .deletePopup{
+  position:fixed; 
+  top:0px; 
+  left:800px;
+  width:600px;
+   background:none;
+} */
+.deletePopup {
+  position: relative;
+  width: 55%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+.required::before{
+  content: "*";
+  color: red;
+}
+.flex-container{
+  display: flex,
+}
+/* .form-group.required .control-label:after { */
+ /* .test
+  content:"*";
+  color:red;
+} */
+
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #eceff2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.Interactpay {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #032d60;
+    color: #fff;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
