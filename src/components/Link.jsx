@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { PlaidLink } from "react-plaid-link";
 import axios from "axios";
-import { timers } from "jquery";
+// import { timers } from "jquery";
 class Link extends Component {
 
   constructor() {
@@ -13,6 +13,7 @@ class Link extends Component {
   componentDidMount = async () => {
       console.log('it worked!!!!!!!')
     var response = await axios.post("/create_link_token");
+    console.log("link token", response);
     this.setState({ linkToken: response.data["link_token"] });
   };
   handleOnSuccess = async (public_token, metadata) => {
