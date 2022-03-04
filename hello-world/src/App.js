@@ -58,6 +58,7 @@ class App extends Component {
     this.handleChechBox = this.handleChechBox.bind(this);
     this.defaultCardPayment = this.defaultCardPayment.bind(this);
     this.updateContact = this.updateContact.bind(this);
+    //this.getContactDetails = this.getContactDetails.bind(this);
     
     //this.onloadeddata = this.onloadeddata.bind(this);
     console.log("constructor");
@@ -90,10 +91,12 @@ class App extends Component {
     console.log("Hiiiiii")
     this.onloadAchFetch();
     this.isCheckValue = false;
+    //this.getContactDetails();
    
     
     } 
 
+  
  //---------------------------------------------------------------------------------------------------------------------------
 
     onloadAchFetch(){

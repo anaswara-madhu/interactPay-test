@@ -14,16 +14,57 @@ class ListPaymentMethods extends Component {
         this.closeDeleteModal = this.closeDeleteModal.bind(this);
         this.deletePaymentMethod = this.deletePaymentMethod.bind(this);
         this.notification = this.notification.bind(this);
+        this.getContactDetails = this.getContactDetails.bind(this);
         this.state = {isDelete : false}
+        this.state = {defaultId : []}
         this.state = {
           items: []
       };
     }
 componentDidMount() {
 console.log("Hiiiiii")
+this.getContactDetails();
 this.onloadeddata();
 this.onloadAchFetch();
+
 } 
+//getting contact details here.................................
+getContactDetails(){
+   this.default2Id=[];
+  console.log("Invoked OrderDetails");
+  var contactParams = {};
+  contactParams.contactId = "0035f00000KTfGYAA1";
+  var url =
+    "https://crma-pay-developer-edition.na163.force.com/InteractPay/services/apexrest/crma_pay/InteractPayAuthorization/?methodType=GET&inputParams=" +
+    JSON.stringify(contactParams);
+  console.log("this.order url ---->" + url);
+  fetch(url, {
+    method: "GET",
+    headers: {
+      mode: "cors",
+      "Access-Control-Allow-Origin": "*",
+    },
+  })
+    .then((response) => response.text())
+    .then((response) => {
+      response = response.slice(1,response.length - 1);
+      console.log("RESponse    ------>",response);
+       var contactReponse = JSON.parse(response);
+      console.log("crma_pay__Default_Payment_Method__c##########",contactReponse.crma_pay__Default_Payment_Method__c);
+      var x=contactReponse.crma_pay__Default_Payment_Method__c;
+      this.default2Id.push(x);
+      this.setState({
+        defaultId : this.default2Id
+      });
+      console.log(" order detailsccc  --xxx--->" +this.default2Id);
+      // this.orderresponse = JSON.parse(JSON.stringify(response));
+     
+    })
+    .catch((err) => {
+      console.log("err" + err);
+    });
+    console.log("******08888888***+++++++++++//////////////=*******$$$$$$$$$$"+this.state.defaultId)
+}
 selectedPaymentMethod(event) {
     console.log('invoked selectedPaymentMethod =====>');
     console.log("Invooked Method" + event.target.getAttribute("data-id"));
@@ -40,7 +81,7 @@ selectedPaymentMethod(event) {
        
 }
  onloadeddata () {
-   console.log("invoke onload");
+   console.log("invoke onload"+this.state.defaultId);
    const queryParams = new URLSearchParams(window.location.search);
     this.custId = queryParams.get("customerId");
     if(this.custId){
@@ -75,6 +116,7 @@ selectedPaymentMethod(event) {
               crd.name = jsonValues[i].billing_details.name;
               paymentMethodList.push(crd);
             }
+            console.log("*********************$$$$$$$$$$"+this.state.defaultId)
             var defaultMethod = "pm_1KQWkxJZdmpiz6ZwRILWgYbS";
             window.paymentMethodId = defaultMethod;
             for (var i = 0; i < paymentMethodList.length; i++) {
