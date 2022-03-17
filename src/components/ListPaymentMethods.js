@@ -62,8 +62,12 @@ getContactDetails(){
     })
     .catch((err) => {
       console.log("err" + err);
-    });
-    console.log("******08888888***+++++++++++//////////////=*******$$$$$$$$$$"+this.state.defaultId)
+    })
+    .finally(()=>
+    console.log("******08888888***+++++++++++//00/////////=*******$$$$$$$$$$"+this.state.defaultId)
+     );
+
+    // console.log("******08888888***+++++++++++//00/////////=*******$$$$$$$$$$"+this.state.defaultId)
 }
 selectedPaymentMethod(event) {
     console.log('invoked selectedPaymentMethod =====>');
@@ -188,7 +192,8 @@ onloadAchFetch(){
             console.log(err);
           });
 
-  
+ 
+
 
 //-------------------------------------------------------------------------------------------------------------------------
 
